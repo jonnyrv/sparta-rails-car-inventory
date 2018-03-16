@@ -1,0 +1,32 @@
+<h1> Dealership page </h1>
+
+<%= link_to 'Add Dealership to the Inventory', dealerships_new_path, :class => "btn" %>
+<%= link_to 'Go to Cars Page', cars_path, :class => "btn" %>
+<%= link_to 'Go to Owners Page', owners_path, :class => "btn" %>
+
+
+
+<h2> Did you find all the Dealerships you want?</h2>
+
+<table class="list2">   
+    <thead>
+        <th>Dealership Name</th>
+        <th>Dealer</th>
+    </thead>
+
+    <tbody>
+        <% @dealership.each do |dealership| %>
+            <tr>
+                <td style="padding:20px"><%= dealership.name%></td>
+                <td><%= dealership.dealers_name %></td>
+                
+
+                <td><%= link_to 'Show', dealership,  :class => "btn" %></td>
+                <td><%= link_to 'Edit', edit_dealership_path(dealership),  :class => "btn" %></td> 
+                <td><%= link_to 'Destroy', dealership, method: :delete, data: {confirm: 'Are you sure?'},  :class => "btn"   %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+

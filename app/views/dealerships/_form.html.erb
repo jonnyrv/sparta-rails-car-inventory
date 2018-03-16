@@ -1,0 +1,16 @@
+<%= form_for(@dealership) do |f|  %>
+    <p>
+    <%=f.label 'Name'%><br>
+    <%=f.text_field :name %>
+    </p>
+    <p>
+    <%=f.label 'Dealer'%><br>
+    <%=f.text_field :dealers_name %>
+    </p>
+    <p>
+    <%=f.label :car %>    
+    <%= collection_select :dealership, :car_id, Car.all, :id, :model, prompt: true %>
+    </p>
+
+    <%=f.submit 'Add' %>
+<%end%>

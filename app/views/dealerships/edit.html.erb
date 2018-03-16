@@ -1,0 +1,5 @@
+<h1>Edit Page For <%= @dealership.name %> </h1>
+
+<%= render 'form', dealership: @dealership %>
+<%= link_to 'Show', @dealership, :class => "btn_over"  %>
+<%= link_to 'Back', dealerships_path , :class => "btn_over" %>
