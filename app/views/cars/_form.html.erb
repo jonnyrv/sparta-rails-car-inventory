@@ -1,0 +1,35 @@
+<%= form_for(@car) do |f|  %>
+    <p>
+    <%=f.label 'Make'%><br>
+    <%=f.text_field :make %>
+    </p>
+    <p>
+    <%=f.label 'Model'%><br>
+    <%=f.text_field :model %>
+    </p>
+    <p>
+    <%=f.label 'Year'%><br>
+    <%=f.text_field :year %>
+    </p>
+    <p>
+    <%=f.label 'Color'%><br>
+    <%=f.text_field :color %>
+    </p>
+    <p>
+    <%=f.label 'Engine Size'%><br>
+    <%=f.text_field :engine_size %>
+    </p>
+    <p>
+    <%=f.label 'Body Type'%><br>
+    <%=f.text_field :body_type %>
+    </p>
+
+    <p>
+    <%=f.label :owner %>    
+    <%= collection_select :car, :owner_id, Owner.all, :id, :name, prompt: true %>
+    </p>
+    <%=f.label :dealership %>    
+    <%= collection_select :car, :dealership_id, Dealership.all, :id, :name, prompt: true %>
+    </p>
+    <%=f.submit 'Add' %>
+<%end%>

@@ -1,0 +1,44 @@
+<h1>Car Page </h1>
+
+<%= link_to 'Add Car to the Inventory', cars_new_path, :class => "btn" %>
+<%= link_to 'Go to the Dealerships Page', dealerships_path, :class => "btn" %>
+<%= link_to 'Go to the Owners Page', owners_path, :class => "btn" %>
+
+
+
+<h2> Did you find all the Cars you need?</h2>
+
+<table class="list2">   
+    <thead>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Color</th>
+        <th>Engine Size</th>
+        <th>Body Type</th>
+        <th>Owner</th>
+        
+        
+        
+    </thead>
+
+    <tbody>
+        <% @car.each do |car| %>
+            <tr>
+                <td style="padding:20px"><%= car.make%></td>
+                <td><%= car.model %></td>
+                <td><%= car.year %></td>
+                <td><%= car.color %></td>
+                <td><%= car.engine_size %></td>
+                <td><%= car.body_type %></td>
+                <td><%= car.owner.name %></td>
+
+                <td><%= link_to 'Show', car, :class => "btn" %></td>
+                <td><%= link_to 'Edit', edit_car_path(car), :class => "btn" %></td> 
+                <td><%= link_to 'Destroy', car, method: :delete, data: {confirm: 'Are you sure?'} , :class => "btn"  %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+

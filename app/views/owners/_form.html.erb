@@ -1,0 +1,21 @@
+<%= form_for(@owner) do |f|  %>
+    <p>
+    <%=f.label 'Name'%><br>
+    <%=f.text_field :name %>
+    </p>
+    <p>
+    <%=f.label 'Age'%><br>
+    <%=f.text_field :age %>
+    </p>
+    <p>
+    <%=f.label 'Email Address'%><br>
+    <%=f.text_field :email_address %>
+    </p>
+    <p>
+    <%=f.label 'Phone Number'%><br>
+    <%=f.text_field :phone_number %>
+    </p>
+    <p>
+
+    <%=f.submit 'Add' %>
+<%end%>

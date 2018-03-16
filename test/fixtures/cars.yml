@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  make: MyString
+  model: MyString
+  year: 1
+  color: MyString
+  engine_size: MyString
+  body_type: MyString
+  owner_id: MyString
+  dealership_id: MyString
+
+two:
+  make: MyString
+  model: MyString
+  year: 1
+  color: MyString
+  engine_size: MyString
+  body_type: MyString
+  owner_id: MyString
+  dealership_id: MyString

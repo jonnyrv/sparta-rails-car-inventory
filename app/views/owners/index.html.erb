@@ -1,0 +1,38 @@
+<h1>Owner Page </h1>
+
+<%= link_to 'Add Owner to the Inventory', owners_new_path, :class => "btn" %>
+<%= link_to 'Go to the Dealerships Page', dealerships_path, :class => "btn" %>
+<%= link_to 'Go to the Cars Page', cars_path, :class => "btn" %>
+
+
+
+
+<h2> Did you find all the Owners you need?</h2>
+
+<table class="list2">   
+    <thead>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email Address</th>
+        <th>Phone Number</th>
+    </thead>
+
+    <tbody>
+        <% @owner.each do |owner| %>
+            <tr>
+                <td style="padding:20px"><%= owner.name%></td>
+                <td><%= owner.age %></td>
+                <td><%= owner.email_address%></td>
+                <td><%= owner.phone_number %></td>
+                
+                
+
+                <td><%= link_to 'Show', owner,  :class => "btn" %></td>
+                <td><%= link_to 'Edit', edit_owner_path(owner),  :class => "btn" %></td> 
+                <td><%= link_to 'Destroy', owner, method: :delete, data: {confirm: 'Are you sure?'} ,  :class => "btn"  %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+
